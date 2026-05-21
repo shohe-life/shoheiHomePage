@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>山田翔平 | ITエンジニア</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">山田翔平</a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="#profile">プロフィール</a></li>
+          <li><a href="#works">実績</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="hero__tagline">ITエンジニア</p>
+      <h1 class="hero__name">山田翔平</h1>
+      <p class="hero__location">滋賀県日野町を拠点に活動しています</p>
+      <p class="hero__catchcopy">ホームページ制作から業務の自動化、アプリ開発など。<br>ITに関するむずかしいこと、まかせてください。</p>
+      <a href="#works" class="btn">実績を見る</a>
+    </div>
+  </section>
+
+  <section class="section" id="profile">
+    <div class="container">
+      <h2 class="section__title">プロフィール</h2>
+      <div class="profile__text">
+        <p>はじめまして、山田翔平です。滋賀県日野町で生まれ、日野町で育ち、今も日野町を拠点にフリーランスのITエンジニアとして活動しています。</p>
+        <p>ホームページ制作を中心に、業務システムの開発、アプリ制作、ITに関するご相談・サポートまで幅広くお受けしています。地元の事業者さんや団体さんのお役に立てることを何より大切にしています。</p>
+        <p>「ITのことはよくわからないけど、何とかしたい」——そんなもやっとした悩みから相談していただいて大丈夫です。むずかしい話は抜きにして、一緒に考えましょう。</p>
+      </div>
+      <h3 class="skills__heading">できること</h3>
+      <ul class="skills">
+        <li class="skill-tag">
+          <span class="skill-tag__label">ホームページ制作</span>
+          <span class="skill-tag__tech">HTML / CSS・JavaScript</span>
+        </li>
+        <li class="skill-tag">
+          <span class="skill-tag__label">スマホアプリ開発</span>
+          <span class="skill-tag__tech">Flutter（iOS・Android 両対応）</span>
+        </li>
+        <li class="skill-tag">
+          <span class="skill-tag__label">業務システム開発</span>
+          <span class="skill-tag__tech">C#・Java</span>
+        </li>
+        <li class="skill-tag">
+          <span class="skill-tag__label">Excel・Office 自動化</span>
+          <span class="skill-tag__tech">VBA</span>
+        </li>
+        <li class="skill-tag">
+          <span class="skill-tag__label">Google ツール活用・自動化</span>
+          <span class="skill-tag__tech">GAS（Google Apps Script）</span>
+        </li>
+        <li class="skill-tag">
+          <span class="skill-tag__label">ブラウザ機能のカスタマイズ</span>
+          <span class="skill-tag__tech">Chrome 拡張機能開発</span>
+        </li>
+        <li class="skill-tag">
+          <span class="skill-tag__label">IT 相談・何でもサポート</span>
+          <span class="skill-tag__tech">「何をすればいい？」からOK</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="works">
+    <div class="container">
+      <h2 class="section__title">実績</h2>
+      <p class="works__empty">実績は順次追加予定です。</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section__title">お問い合わせ</h2>
+      <p class="contact__lead">対応できるか不安な要望でも、まずご相談ください。</p>
+      <a href="mailto:yamatch0430@gmail.com" class="btn">メールで問い合わせる</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 山田翔平</p>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 0);
+    });
+  </script>
+
+</body>
+</html>
