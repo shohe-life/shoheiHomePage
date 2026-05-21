@@ -26,6 +26,9 @@
   </header>
 
   <section class="hero">
+    <div class="hero__circle hero__circle--lg"></div>
+    <div class="hero__circle hero__circle--md"></div>
+    <div class="hero__circle hero__circle--sm"></div>
     <div class="hero__inner">
       <p class="hero__tagline">ITエンジニア</p>
       <h1 class="hero__name">山田翔平</h1>
@@ -101,6 +104,36 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('nav--scrolled', window.scrollY > 0);
     });
+
+    const hero = document.querySelector('.hero');
+    const balls = Array.from(document.querySelectorAll('.hero__circle')).map(el => {
+      const size = el.offsetWidth;
+      const x = Math.random() * (hero.offsetWidth - size);
+      const y = Math.random() * (hero.offsetHeight - size);
+      const speed = 0.4 + Math.random() * 0.4;
+      const angle = Math.random() * Math.PI * 2;
+      el.style.left = '0px';
+      el.style.top = '0px';
+      el.style.transform = `translate(${x}px, ${y}px)`;
+      return { el, x, y, dx: Math.cos(angle) * speed, dy: Math.sin(angle) * speed, size };
+    });
+
+    function animate() {
+      const w = hero.offsetWidth;
+      const h = hero.offsetHeight;
+      balls.forEach(b => {
+        b.x += b.dx;
+        b.y += b.dy;
+        if (b.x <= 0)          { b.x = 0;          b.dx =  Math.abs(b.dx); }
+        if (b.x >= w - b.size) { b.x = w - b.size; b.dx = -Math.abs(b.dx); }
+        if (b.y <= 0)          { b.y = 0;           b.dy =  Math.abs(b.dy); }
+        if (b.y >= h - b.size) { b.y = h - b.size;  b.dy = -Math.abs(b.dy); }
+        b.el.style.transform = `translate(${b.x}px, ${b.y}px)`;
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
   </script>
 
 </body>
