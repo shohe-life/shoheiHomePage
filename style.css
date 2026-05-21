@@ -201,7 +201,6 @@ body {
   flex-direction: column;
   gap: 16px;
   margin-bottom: 48px;
-  max-width: 720px;
 }
 
 .skills__heading {
