@@ -303,6 +303,126 @@ body {
 }
 
 
+/* ===== Samples ===== */
+.samples__lead {
+  color: var(--color-text-sub);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.samples__list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.sample-card a {
+  display: block;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.sample-card a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+}
+
+.sample-card__browser {
+  background: #e8ecf0;
+  border-bottom: 1px solid #dde1e7;
+}
+
+.sample-card__browser-bar {
+  display: flex;
+  gap: 5px;
+  padding: 8px 12px;
+  background: #d8dce2;
+}
+.sample-card__browser-bar span {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: #c0c5cc;
+}
+.sample-card__browser-bar span:nth-child(1) { background: #fc6058; }
+.sample-card__browser-bar span:nth-child(2) { background: #fec02f; }
+.sample-card__browser-bar span:nth-child(3) { background: #2aca3e; }
+
+.sample-card__preview {
+  background: #0d1b2a;
+  height: 160px;
+  padding: 1rem 1.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.sample-card__preview-nav {
+  display: flex;
+  gap: 8px;
+}
+.sample-card__preview-nav span {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.2);
+  flex: 1;
+}
+.sample-card__preview-nav span:first-child { background: rgba(0,180,216,0.6); }
+
+.sample-card__preview-label {
+  font-size: 0.55rem;
+  color: rgba(0,180,216,0.8);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.sample-card__preview-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.sample-card__body {
+  padding: 1.25rem 1.5rem;
+}
+
+.sample-card__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 99px;
+  padding: 0.15em 0.75em;
+  margin-bottom: 0.6rem;
+}
+
+.sample-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.sample-card__desc {
+  font-size: 0.85rem;
+  color: var(--color-text-sub);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.sample-card__link {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
 /* ===== Footer ===== */
 .footer {
   background: var(--color-accent-hover);
