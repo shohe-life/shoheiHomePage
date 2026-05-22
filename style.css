@@ -423,6 +423,12 @@ body {
 
 .sample-card__tag--warm { background: #C4956A; }
 
+.sample-card__preview--bakery {
+  background: linear-gradient(150deg, #3D2410 0%, #C97C2A 100%);
+}
+
+.sample-card__tag--bakery { background: #C97C2A; }
+
 .sample-card__link {
   font-size: 0.85rem;
   color: var(--color-accent);
