@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>採用情報 | 株式会社ミライテック</title>
+  <title>採用情報 | 株式会社ミルフィーユテック</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <span class="nav__logo-mark">M</span>
-        <span>株式会社ミライテック</span>
+        <span>株式会社ミルフィーユテック</span>
       </a>
       <nav>
         <ul class="nav__links">
@@ -26,8 +26,20 @@
           <li><a href="index.html#contact" class="nav__cta">お問い合わせ</a></li>
         </ul>
       </nav>
+      <button class="nav__hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <div class="nav__drawer">
+    <a href="services.html">事業内容</a>
+    <a href="company.html">会社概要</a>
+    <a href="recruit.html">採用情報</a>
+    <a href="news.html">お知らせ</a>
+    <a href="index.html#contact" class="nav__cta">お問い合わせ</a>
+  </div>
+  <div class="nav__overlay"></div>
 
   <!-- Page Hero -->
   <section class="page-hero">
@@ -47,10 +59,10 @@
       </div>
       <div class="recruit-message">
         <div class="recruit-message__text">
-          <p>ミライテックが大切にしているのは、「丁寧であること」です。お客様へ届ける部品のひとつひとつに責任を持ち、手を抜かない。そんな姿勢を持った仲間と一緒に働きたいと思っています。</p>
+          <p>ミルフィーユテックが大切にしているのは、「丁寧であること」です。お客様へ届ける部品のひとつひとつに責任を持ち、手を抜かない。そんな姿勢を持った仲間と一緒に働きたいと思っています。</p>
           <p>私たちの仕事は、ものづくりの縁の下の力持ちです。地味に見えるかもしれませんが、あなたの手で組み立てた部品が医療現場や自動車の安全を守っている——そんな誇りを持って働ける職場です。</p>
           <p>未経験の方でも、先輩スタッフがしっかり教えます。一緒に成長していきましょう。</p>
-          <p class="recruit-message__sign">代表取締役　架空 太郎（※架空の人物です）</p>
+          <p class="recruit-message__sign">代表取締役　マカロン 太郎</p>
         </div>
       </div>
     </div>
@@ -184,7 +196,7 @@
 
   <footer class="footer">
     <div class="footer__inner">
-      <p class="footer__logo">株式会社ミライテック</p>
+      <p class="footer__logo">株式会社ミルフィーユテック</p>
       <nav class="footer__nav">
         <a href="index.html">ホーム</a>
         <a href="services.html">事業内容</a>
@@ -193,7 +205,7 @@
         <a href="news.html">お知らせ</a>
         <a href="index.html#contact">お問い合わせ</a>
       </nav>
-      <p class="footer__copy">© 2026 株式会社ミライテック. All rights reserved.</p>
+      <p class="footer__copy">© 2026 株式会社ミルフィーユテック. All rights reserved.</p>
     </div>
   </footer>
 
@@ -202,6 +214,26 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('nav--scrolled', window.scrollY > 50);
     });
+    const hamburger = document.querySelector('.nav__hamburger');
+    const drawer = document.querySelector('.nav__drawer');
+    const overlay = document.querySelector('.nav__overlay');
+    function closeMenu() {
+      hamburger.classList.remove('is-open');
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+    }
+    hamburger.addEventListener('click', () => {
+      const opening = !drawer.classList.contains('is-open');
+      if (opening) {
+        drawer.classList.add('is-open');
+        overlay.classList.add('is-open');
+        hamburger.classList.add('is-open');
+      } else {
+        closeMenu();
+      }
+    });
+    overlay.addEventListener('click', closeMenu);
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   </script>
 </body>
 </html>

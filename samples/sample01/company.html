@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>会社概要 | 株式会社ミライテック</title>
+  <title>会社概要 | 株式会社ミルフィーユテック</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <span class="nav__logo-mark">M</span>
-        <span>株式会社ミライテック</span>
+        <span>株式会社ミルフィーユテック</span>
       </a>
       <nav>
         <ul class="nav__links">
@@ -26,8 +26,20 @@
           <li><a href="index.html#contact" class="nav__cta">お問い合わせ</a></li>
         </ul>
       </nav>
+      <button class="nav__hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <div class="nav__drawer">
+    <a href="services.html">事業内容</a>
+    <a href="company.html">会社概要</a>
+    <a href="recruit.html">採用情報</a>
+    <a href="news.html">お知らせ</a>
+    <a href="index.html#contact" class="nav__cta">お問い合わせ</a>
+  </div>
+  <div class="nav__overlay"></div>
 
   <!-- Page Hero -->
   <section class="page-hero">
@@ -48,7 +60,7 @@
       <div class="philosophy__block">
         <p class="philosophy__catch">「精度と誠実さで、<br>社会のものづくりを支える。」</p>
         <div class="philosophy__text">
-          <p>ミライテックは、「精密であること」と「誠実であること」を何より大切にしています。私たちが手掛ける部品のひとつひとつが、医療現場や自動車の安全、日々の暮らしを支える製品へとつながっています。</p>
+          <p>ミルフィーユテックは、「精密であること」と「誠実であること」を何より大切にしています。私たちが手掛ける部品のひとつひとつが、医療現場や自動車の安全、日々の暮らしを支える製品へとつながっています。</p>
           <p>だからこそ、小さな一手間も省かない。見えないところでも手を抜かない。そんな姿勢を、創業以来変わらず守り続けています。</p>
           <p>これからも「信頼されるパートナー」として、お客様とともにものづくりの未来をつくっていきます。</p>
         </div>
@@ -82,7 +94,7 @@
           <div class="history-item__year">2003</div>
           <div class="history-item__body">
             <p class="history-item__month">4月</p>
-            <p class="history-item__text">架空県サンプル市にて株式会社ミライテック設立。電子部品の組立・検査事業を開始。</p>
+            <p class="history-item__text">シュークリーム県エクレア市にて株式会社ミルフィーユテック設立。電子部品の組立・検査事業を開始。</p>
           </div>
         </div>
         <div class="history-item">
@@ -194,12 +206,12 @@
       </div>
       <table class="company-table">
         <tbody>
-          <tr><th>会社名</th><td>株式会社ミライテック</td></tr>
+          <tr><th>会社名</th><td>株式会社ミルフィーユテック</td></tr>
           <tr><th>設立</th><td>2003年4月</td></tr>
           <tr><th>資本金</th><td>1,000万円</td></tr>
-          <tr><th>代表取締役</th><td>架空 太郎（※架空の人物です）</td></tr>
+          <tr><th>代表取締役</th><td>マカロン 太郎</td></tr>
           <tr><th>従業員数</th><td>60名（パート・アルバイト含む）</td></tr>
-          <tr><th>所在地</th><td>〒999-9999　架空県サンプル市ダミー町1-2-3（※架空の住所です）</td></tr>
+          <tr><th>所在地</th><td>〒999-9999　シュークリーム県エクレア市プリン町1-2-3</td></tr>
           <tr><th>事業内容</th><td>医療機器部品検査・組立／電子部品精密組立／自動車部品組立・検査／産業機械組立</td></tr>
           <tr><th>認証</th><td>ISO 9001:2015</td></tr>
           <tr><th>取引先</th><td>医療機器メーカー・電機メーカー・自動車部品メーカー 他</td></tr>
@@ -223,7 +235,7 @@
 
   <footer class="footer">
     <div class="footer__inner">
-      <p class="footer__logo">株式会社ミライテック</p>
+      <p class="footer__logo">株式会社ミルフィーユテック</p>
       <nav class="footer__nav">
         <a href="index.html">ホーム</a>
         <a href="services.html">事業内容</a>
@@ -232,7 +244,7 @@
         <a href="news.html">お知らせ</a>
         <a href="index.html#contact">お問い合わせ</a>
       </nav>
-      <p class="footer__copy">© 2026 株式会社ミライテック. All rights reserved.</p>
+      <p class="footer__copy">© 2026 株式会社ミルフィーユテック. All rights reserved.</p>
     </div>
   </footer>
 
@@ -241,6 +253,26 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('nav--scrolled', window.scrollY > 50);
     });
+    const hamburger = document.querySelector('.nav__hamburger');
+    const drawer = document.querySelector('.nav__drawer');
+    const overlay = document.querySelector('.nav__overlay');
+    function closeMenu() {
+      hamburger.classList.remove('is-open');
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+    }
+    hamburger.addEventListener('click', () => {
+      const opening = !drawer.classList.contains('is-open');
+      if (opening) {
+        drawer.classList.add('is-open');
+        overlay.classList.add('is-open');
+        hamburger.classList.add('is-open');
+      } else {
+        closeMenu();
+      }
+    });
+    overlay.addEventListener('click', closeMenu);
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   </script>
 </body>
 </html>

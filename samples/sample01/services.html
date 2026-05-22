@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>事業内容 | 株式会社ミライテック</title>
+  <title>事業内容 | 株式会社ミルフィーユテック</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <span class="nav__logo-mark">M</span>
-        <span>株式会社ミライテック</span>
+        <span>株式会社ミルフィーユテック</span>
       </a>
       <nav>
         <ul class="nav__links">
@@ -26,8 +26,20 @@
           <li><a href="index.html#contact" class="nav__cta">お問い合わせ</a></li>
         </ul>
       </nav>
+      <button class="nav__hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <div class="nav__drawer">
+    <a href="services.html">事業内容</a>
+    <a href="company.html">会社概要</a>
+    <a href="recruit.html">採用情報</a>
+    <a href="news.html">お知らせ</a>
+    <a href="index.html#contact" class="nav__cta">お問い合わせ</a>
+  </div>
+  <div class="nav__overlay"></div>
 
   <!-- Page Hero -->
   <section class="page-hero">
@@ -48,7 +60,7 @@
           <p class="service-detail__lead">医療部外品・医療雑貨の精密検査とセットアップを行います。</p>
         </div>
         <div class="service-detail__body">
-          <p>医療現場で使われる機器・雑貨類は、わずかな誤差が患者様の安全に直結します。ミライテックでは、厳格な品質基準のもと、医療機器部品の外観検査・機能検査・セットアップを一貫して請け負います。</p>
+          <p>医療現場で使われる機器・雑貨類は、わずかな誤差が患者様の安全に直結します。ミルフィーユテックでは、厳格な品質基準のもと、医療機器部品の外観検査・機能検査・セットアップを一貫して請け負います。</p>
           <p>作業員は定期的な技能訓練を受けており、指差し確認・ダブルチェック体制を徹底。万が一の不良品流出を防ぐ多重安全システムを導入しています。</p>
           <div class="service-detail__tags">
             <span>外観検査</span>
@@ -96,7 +108,7 @@
           <p class="service-detail__lead">自動車関連部品の組立・外観検査・機能検査を品質トレーサビリティ管理のもとで行います。</p>
         </div>
         <div class="service-detail__body">
-          <p>自動車部品は安全性に直結するため、厳格な品質管理が不可欠です。ミライテックでは、部品ごとの作業記録・検査記録を徹底し、万が一の際も追跡できる品質トレーサビリティ体制を構築しています。</p>
+          <p>自動車部品は安全性に直結するため、厳格な品質管理が不可欠です。ミルフィーユテックでは、部品ごとの作業記録・検査記録を徹底し、万が一の際も追跡できる品質トレーサビリティ体制を構築しています。</p>
           <p>内外装部品・電装ユニット・樹脂成形品など、多様な部品に対応。大ロット量産から急な増産依頼まで、柔軟にご対応します。</p>
           <div class="service-detail__tags">
             <span>外観検査</span>
@@ -120,7 +132,7 @@
           <p class="service-detail__lead">搬送機械・鋼鉄材料など大型機械の組立に対応します。</p>
         </div>
         <div class="service-detail__body">
-          <p>大型の産業機械・搬送機械の組立には、豊富な経験と確かな技術が必要です。ミライテックの熟練スタッフが、図面を正確に読み解き、精密かつ安全に組み上げます。</p>
+          <p>大型の産業機械・搬送機械の組立には、豊富な経験と確かな技術が必要です。ミルフィーユテックの熟練スタッフが、図面を正確に読み解き、精密かつ安全に組み上げます。</p>
           <p>自社の大型工場と重機設備を活かし、他社では対応が難しい大型案件もお任せください。現地組立・据付作業にも対応しています。</p>
           <div class="service-detail__tags">
             <span>搬送機械組立</span>
@@ -149,7 +161,7 @@
 
   <footer class="footer">
     <div class="footer__inner">
-      <p class="footer__logo">株式会社ミライテック</p>
+      <p class="footer__logo">株式会社ミルフィーユテック</p>
       <nav class="footer__nav">
         <a href="index.html">ホーム</a>
         <a href="services.html">事業内容</a>
@@ -158,7 +170,7 @@
         <a href="news.html">お知らせ</a>
         <a href="index.html#contact">お問い合わせ</a>
       </nav>
-      <p class="footer__copy">© 2026 株式会社ミライテック. All rights reserved.</p>
+      <p class="footer__copy">© 2026 株式会社ミルフィーユテック. All rights reserved.</p>
     </div>
   </footer>
 
@@ -167,6 +179,26 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('nav--scrolled', window.scrollY > 50);
     });
+    const hamburger = document.querySelector('.nav__hamburger');
+    const drawer = document.querySelector('.nav__drawer');
+    const overlay = document.querySelector('.nav__overlay');
+    function closeMenu() {
+      hamburger.classList.remove('is-open');
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+    }
+    hamburger.addEventListener('click', () => {
+      const opening = !drawer.classList.contains('is-open');
+      if (opening) {
+        drawer.classList.add('is-open');
+        overlay.classList.add('is-open');
+        hamburger.classList.add('is-open');
+      } else {
+        closeMenu();
+      }
+    });
+    overlay.addEventListener('click', closeMenu);
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   </script>
 </body>
 </html>
