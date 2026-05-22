@@ -417,6 +417,12 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.sample-card__preview--warm {
+  background: linear-gradient(150deg, #3D2410 0%, #6B3D28 100%);
+}
+
+.sample-card__tag--warm { background: #C4956A; }
+
 .sample-card__link {
   font-size: 0.85rem;
   color: var(--color-accent);
