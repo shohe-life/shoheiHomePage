@@ -290,6 +290,49 @@ body {
   line-height: 1.7;
 }
 
+/* 公開中のサイトへ飛べる実績カード（画面の絵＋本文の横並び） */
+.work-card--site {
+  background: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.work-card--site a {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.work-card--site a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+}
+
+.work-card--site .sample-card__browser {
+  display: flex;
+  flex-direction: column;
+  border-bottom: none;
+}
+
+.work-card--site .sample-card__preview {
+  flex: 1;
+  height: auto;
+  min-height: 160px;
+}
+
+.work-card__body {
+  padding: 1.5rem 1.75rem;
+}
+
+.work-card--site .work-card__desc {
+  margin-bottom: 0.75rem;
+}
+
 /* ===== Contact ===== */
 #contact {
   background: linear-gradient(160deg, #edfcfa 0%, #f5fffe 100%);
@@ -429,6 +472,16 @@ body {
 
 .sample-card__tag--bakery { background: #C97C2A; }
 
+.sample-card__preview--hayatan {
+  background: linear-gradient(150deg, #24391a 0%, #5a9b2e 100%);
+}
+.sample-card__preview--hayatan .sample-card__preview-label {
+  color: rgba(255,255,255,0.8);
+}
+.sample-card__preview--hayatan .sample-card__preview-nav span:first-child {
+  background: rgba(255,255,255,0.6);
+}
+
 .sample-card__link {
   font-size: 0.85rem;
   color: var(--color-accent);
@@ -485,5 +538,9 @@ body {
 
   .skill-tag {
     min-width: 100px;
+  }
+
+  .work-card--site a {
+    grid-template-columns: 1fr;
   }
 }
